@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="152dp"
+        android:hint="Enter your email"
+        android:inputType="text|textCapCharacters|textCapWords|textEmailAddress|textEmailSubject|textShortMessage|textWebEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="227dp"
+        android:hint="Enter your Password"
+        android:inputType="text|textCapCharacters|textPassword|textWebPassword|number|numberDecimal|numberPassword|phone" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="201dp"
+        android:text="@String/"
+        tools:text="Register User" />
+
+    <TextView
+        android:id="@+id/textViewSignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="94dp"
+        android:text="@String/"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        tools:text="Already Registered? Sign in here" />
+
+    <TextView
+        android:id="@+id/tvlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        android:text="@string/"
+        android:textColorLink="@android:color/holo_blue_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="Welcome to EcitizenHudumaKenya App" />
+
+
+</RelativeLayout>

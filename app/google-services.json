@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "295078424620",
+    "firebase_url": "https://ecitizenhudumakenya-e68ba.firebaseio.com",
+    "project_id": "ecitizenhudumakenya-e68ba",
+    "storage_bucket": "ecitizenhudumakenya-e68ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295078424620:android:f5d3318431f832cd",
+        "android_client_info": {
+          "package_name": "com.marvedie.ecitizenhudumakenya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295078424620-ijofg70rjhjlf389ecokgsq29522ps4u.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "295078424620-ijofg70rjhjlf389ecokgsq29522ps4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWUu4qwHPolfNTnR9BIS22sniiA7j5mjk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
