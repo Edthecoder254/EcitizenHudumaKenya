@@ -34,7 +34,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="201dp"
-        android:text="@String/"
         tools:text="Register User" />
 
     <TextView
@@ -44,23 +43,33 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="94dp"
-        android:text="@String/"
+        android:text="Already Registered? Sign in here"
         android:textAlignment="center"
-        android:textSize="18sp"
-        tools:text="Already Registered? Sign in here" />
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/tvlabel"
+        android:id="@+id/tvLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="65dp"
-        android:text="@string/"
+        android:layout_marginTop="27dp"
+        android:padding="10dp"
+        android:text="Welcome to EcitizenHudumaKenya App"
         android:textColorLink="@android:color/holo_blue_dark"
         android:textSize="18sp"
-        android:textStyle="bold"
-        tools:text="Welcome to EcitizenHudumaKenya App" />
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvuserRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="107dp"
+        android:text="User Registration"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
 
 
 </RelativeLayout>

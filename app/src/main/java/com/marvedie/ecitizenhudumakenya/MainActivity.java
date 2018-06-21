@@ -1,6 +1,7 @@
 package com.marvedie.ecitizenhudumakenya;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         firebaseAuth = firebaseAuth.getInstance();
+        if (firebaseAuth.getCurrentUser() != null){
+            //start profile activity
+            finish();
+            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+        }
 
         progressDialog = new ProgressDialog(this);
 
@@ -69,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         progressDialog.setMessage("Registering User");
+        progressDialog.show();
 
 
         firebaseAuth.createUserWithEmailAndPassword(email, password)
@@ -79,7 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             //user is successfully registered and logged in
                             //we will start the profile activity here
                             //rights now lets display a toast only
-                            Toast.makeText(MainActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
+                            finish();
+                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+
                         } else {
                             Toast.makeText(MainActivity.this, "Could not Register.. please try again", Toast.LENGTH_SHORT).show();
                         }
@@ -94,11 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             registerUser();
         }
         if (view == textViewSignin) {
-            //login activity here
-
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
         }
-
-
     }
 }
 
