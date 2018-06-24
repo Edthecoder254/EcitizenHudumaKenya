@@ -17,47 +17,50 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-// view objects
-    private Button buttonRegister;
+public class EcitizenLogin extends AppCompatActivity implements View.OnClickListener {
+    //view objects
     private EditText editTextEmail;
     private EditText editTextPassword;
-    private TextView textViewSignin;
+    private Button buttonLogin;
+    private TextView tvForgotPassword;
+    private TextView tvCreateAccount;
 
     private ProgressDialog progressDialog;
-//firebase authentication object
+
+    //firebase authentication object
     private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-//initializing firebase authentication object
-        firebaseAuth = firebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() != null){
+        setContentView(R.layout.activity_ecitizen_login);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        if (firebaseAuth.getCurrentUser() != null) {
             //start profile activity
             finish();
-            startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
 
         progressDialog = new ProgressDialog(this);
 
-        buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        //Initialise objects
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        textViewSignin = (TextView) findViewById(R.id.textViewSignin);
+        buttonLogin = (Button) findViewById(R.id.buttonLogin);
+        tvForgotPassword = (TextView) findViewById(R.id.tvForgotPassword);
+        tvCreateAccount = (TextView) findViewById(R.id.tvCreateAccount);
 
-
-        buttonRegister.setOnClickListener(this);
-        textViewSignin.setOnClickListener(this);
-
-
+        buttonLogin.setOnClickListener(this);
+        tvCreateAccount.setOnClickListener(this);
+        tvForgotPassword.setOnClickListener(this);
     }
-// register user method
-    private void registerUser() {
+
+    private void userLogin() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+
 
         if (TextUtils.isEmpty(email)) {
             //email is empty
@@ -73,24 +76,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //if validation is okay we will show progress bar here because it is an internet activity
         //taking time
 
-
-        progressDialog.setMessage("Registering User");
+        progressDialog.setMessage("Please Wait as we log you into the system");
         progressDialog.show();
 
-
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
                         if (task.isSuccessful()) {
-                            //user is successfully registered and logged in
-                            //we will start the profile activity here
-                            //rights now lets display a toast only
+                            //start the profile activity
                             finish();
-                            startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-
-                        } else {
-                            Toast.makeText(MainActivity.this, "Could not Register.. please try again", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), EcitizenDashboard.class));
                         }
                     }
                 });
@@ -99,15 +96,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        //if register button is pressed
-        if (view == buttonRegister) {
-            registerUser();
+        if (view == buttonLogin) {
+            userLogin();
         }
-        if (view == textViewSignin) {
+        if (view == tvCreateAccount) {
             finish();
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this,  RegisterEcitizen.class));
         }
+        if (view == tvForgotPassword) {
+            finish();
+            startActivity(new Intent(this, ForgotPassword.class));
+        }
+
     }
 }
-
 
