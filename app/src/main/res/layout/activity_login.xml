@@ -36,8 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:hint="Enter your Password"
-        android:inputType="textPassword" />
+        android:hint="Enter your Password" />
 
     <Button
         android:id="@+id/buttonSignin"
@@ -58,18 +57,16 @@
         android:textAlignment="center"
         android:textSize="14sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/tvUserLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="97dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="User LogIn"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:layout_alignStart="@+id/buttonSignin"
+        android:layout_marginTop="113dp"
+        android:padding="10dp"
+        android:text="User Login"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 
 

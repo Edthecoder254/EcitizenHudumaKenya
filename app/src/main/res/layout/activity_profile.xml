@@ -9,18 +9,55 @@
     <TextView
         android:id="@+id/textViewUserEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="35dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewUserEmail"
+        android:layout_centerHorizontal="true"
+        android:text="LogOut" />
+
+    <TextView
+        android:id="@+id/tvServiceSelector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp"
-        android:text="LogOut" />
+        android:layout_marginTop="113dp"
+        android:text="Please choose one of the following "
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonEcitizen"
+        android:layout_width="138dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivEcitizenLogo"
+        android:layout_centerHorizontal="true"
+        android:text="Ecitizen"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/ivEcitizenLogo"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="168dp"
+        app:srcCompat="@drawable/eCitizenlogo" />
+
+    <Button
+        android:id="@+id/buttonEcitizenGuide"
+        android:layout_width="198dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="111dp"
+        android:text="EcitzenGuide" />
+
 </RelativeLayout>

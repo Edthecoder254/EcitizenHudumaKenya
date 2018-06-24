@@ -24,8 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="227dp"
-        android:hint="Enter your Password"
-        android:inputType="text|textCapCharacters|textPassword|textWebPassword|number|numberDecimal|numberPassword|phone" />
+        android:hint="Enter your Password" />
 
     <Button
         android:id="@+id/buttonRegister"
@@ -34,7 +33,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="201dp"
-        tools:text="Register User" />
+        android:text="Register User"
+        android:textColorLink="@color/colorPrimary" />
 
     <TextView
         android:id="@+id/textViewSignin"
@@ -45,6 +45,7 @@
         android:layout_marginBottom="94dp"
         android:text="Already Registered? Sign in here"
         android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 
     <TextView
@@ -56,7 +57,7 @@
         android:layout_marginTop="27dp"
         android:padding="10dp"
         android:text="Welcome to EcitizenHudumaKenya App"
-        android:textColorLink="@android:color/holo_blue_dark"
+        android:textColorLink="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />
 
