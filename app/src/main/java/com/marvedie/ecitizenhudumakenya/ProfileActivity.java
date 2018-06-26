@@ -10,9 +10,11 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth firebaseAuth;
+    //views
     private TextView textViewUserEmail;
     private Button buttonLogout;
     private Button buttonEcitizen;
@@ -22,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        //instantiate firebase object
         firebaseAuth = FirebaseAuth.getInstance();
 
         if (firebaseAuth.getCurrentUser() ==null){
@@ -31,8 +33,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
+
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         textViewUserEmail.setText("Welcome"+ user.getEmail());
+
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
         buttonEcitizen = (Button) findViewById(R.id.buttonEcitizen);
         buttonEcitizenGuide = (Button) findViewById(R.id.buttonEcitizenGuide);
@@ -53,11 +57,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             finish();
             startActivity(new Intent(this, EcitizenLogin.class));
         }
-            if (view == buttonEcitizenGuide){
-                finish();
-                startActivity(new Intent(this, EcitizenGuide.class));
-            }
+        if (view == buttonEcitizenGuide){
+            finish();
+            startActivity(new Intent(this, EcitizenGuide.class));
         }
-
     }
+
+}
 

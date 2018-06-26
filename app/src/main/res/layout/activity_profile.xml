@@ -39,17 +39,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="174dp"
-        android:text="Ecitizen"
-        android:textSize="18sp" />
+        android:layout_marginBottom="154dp"
+        android:text="Ecitizen" />
 
     <ImageView
         android:id="@+id/ivEcitizenLogo"
         android:layout_width="match_parent"
-        android:layout_height="145dp"
+        android:layout_height="116dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="174dp"
+        android:padding="5dp"
         app:srcCompat="@drawable/ecitzen_logo" />
 
     <Button
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="69dp"
+        android:layout_marginBottom="36dp"
         android:text="EcitzenGuide" />
 
 </RelativeLayout>
